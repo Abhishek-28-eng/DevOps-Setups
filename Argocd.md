@@ -116,3 +116,7 @@ kubectl patch deployment argocd-server -n argocd \
 --type=json \
 -p='[{"op":"add","path":"/spec/template/spec/containers/0/args/-","value":"--insecure"}]'
 
+## To set Nodeport
+kubectl edit svc argocd-server -n argocd
+
+
