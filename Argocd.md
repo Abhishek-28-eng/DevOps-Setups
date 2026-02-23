@@ -108,4 +108,11 @@ Choose Settings → Change Password.
 Set a strong password.
 
 Important for production and security.
-  
+
+
+## To patching to insecure 
+
+kubectl patch deployment argocd-server -n argocd \
+--type=json \
+-p='[{"op":"add","path":"/spec/template/spec/containers/0/args/-","value":"--insecure"}]'
+
